@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div style={{ padding: '50px' }}>
-      <h2>Logins</h2>
+      <h2>Login</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="email"
