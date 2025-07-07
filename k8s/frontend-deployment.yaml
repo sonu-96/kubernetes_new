@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: login-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: login
+  template:
+    metadata:
+      labels:
+        app: login
+    spec:
+      containers:
+        - name: login
+          image: 625439398856.dkr.ecr.ap-south-1.amazonaws.com/eks/main:latest
+          ports:
+            - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: login-frontend
+spec:
+  selector:
+    app: login
+  ports:
+    - port: 80
+      targetPort: 3000
+  type: LoadBalancer
+
