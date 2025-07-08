@@ -27,3 +27,5 @@ jobs:
             ${{ secrets.ECR_REGISTRY_MAIN }}:latest
           build-args: |
             GITHUB_SHA=${{ github.sha }}
+
+            
